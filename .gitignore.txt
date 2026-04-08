@@ -1,0 +1,4 @@
+.Rproj.user/
+DI-global_files/
+_site/
+*.Rhistory
