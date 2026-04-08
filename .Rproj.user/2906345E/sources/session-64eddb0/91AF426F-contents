@@ -89,8 +89,6 @@ leaflet(di_global) %>%
     opacity = 1)
 ```
 
-Source : Projet intégré de conservation et restauration des milieux naturels
-
 # Enjeux de conservation du massif du Volcan
 
 ```{r}
@@ -127,8 +125,8 @@ labels <- paste0(
 )
 
 # Ajout de Min et Max
-labels[1] <- paste0(labels[1], " - Min")
-labels[length(labels)] <- paste0(labels[length(labels)], " - Max")
+labels[1] <- paste0(labels[1], " - Faible enjeu")
+labels[length(labels)] <- paste0(labels[length(labels)], " - Fort enjeu")
 
 
 enjeu$classe <- cut(
@@ -182,8 +180,6 @@ leaflet(enjeu) %>%
     opacity = 1
   )
 ```
-
-Source : Projet intégré de conservation et restauration des milieux naturels
 
 # Priorités de surveillance et de restauration du massif du Volcan
 
@@ -249,8 +245,6 @@ leaflet(prio_hab) %>%
     opacity = 1
   )
 ```
-
-Source : Projet intégré de conservation et restauration des milieux naturels
 
 ::: {style="display: flex; justify-content: center; gap: 20px; align-items: center;"}
 ![](Union_europeenne.jpg){width="158"} ![](Europe_FEADER.png){width="150"} ![](Prefecture.png){width="120"} ![](Region.png){width="152"}![](images/clipboard-2826500902.png){width="110"}![](images/clipboard-587944360.jpeg){width="150"}![](images/clipboard-628221018.jpeg){width="200"}
