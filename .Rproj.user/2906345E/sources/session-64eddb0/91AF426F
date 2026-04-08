@@ -3,7 +3,7 @@
     "path": "C:/Users/apiron/Desktop/GT_Volcan/DI-global.qmd",
     "project_path": "DI-global.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "2178404818",
     "contents": "",
     "dirty": false,
     "created": 1775565808510.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "140:400",
+        "rmdVisualModeLocation": "84:0",
         "cursorPosition": "0,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1775622786,
+    "lastKnownWriteTime": 1775635842,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1775622786252,
+    "last_content_update": 1775635842327,
     "read_only": false,
     "read_only_alternatives": []
 }
