@@ -1,4 +1,5 @@
 .Rproj.user/
-DI-global_files/
+.Rhistory
 _site/
-*.Rhistory
+*_files/
+!DI-global.html
