@@ -1,10 +1,17 @@
 ---
-title: "Cartes GT_Volcan"
+title: "Projet intégré de conservation et restauration des milieux naturels -  Résulats du diagnostic et de la priorisation spatiale des actions de restauration sur le massif du Volcan"
 format:
   html:
     self-contained: true
+    logo: logo_Reminat.png
 editor: visual
 ---
+
+<p align="right">
+
+<img src="logo_Reminat.png" width="150"/>
+
+</p>
 
 # Degré d’invasion final sur le massif du Volcan
 
@@ -25,10 +32,6 @@ di_global <-st_read("06_Prio_Volcan_2026_v3.shp")
 class(di_global)
 plot(di_global)
 ```
-
-Données issues degré d'invasion + dire d'expert ? + obs_eee ?
-
-degré d'invasion moyennement envahi (1) et (2) ?
 
 ```{r}
 #| include: false
@@ -87,6 +90,8 @@ leaflet(di_global) %>%
     title = "Degré d'invasion",
     opacity = 1)
 ```
+
+Source : Projet intégré de conservation et restauration des milieux naturels
 
 # Enjeux de conservation du massif du Volcan
 
@@ -148,8 +153,6 @@ pal <- colorFactor(palette = c(
 ), domain = enjeu$classe)
 ```
 
-Enjeux zonation ou enjeu texte ?
-
 ```{r}
 #| echo: false
 
@@ -174,6 +177,8 @@ leaflet(enjeu) %>%
     opacity = 1
   )
 ```
+
+Source : Projet intégré de conservation et restauration des milieux naturels
 
 # Priorités de surveillance et de restauration du massif du Volcan
 
@@ -216,8 +221,6 @@ pal <- colorFactor(palette = c(
 ), domain = prio_hab$prio_txt)
 ```
 
-Identification des priorités de surveillance et de restauration du massif du Volcan. Trois blocs de données ont été utilisés pour ces analyses : enjeux de conservation (gradient de priorités issus du logiciel Zonation), stratégie régionale d’intervention (maintenir et restaurer en priorités les zones en bon état de conservation et avec un risque d’impact fort) et critères contextuels d’intervention (accessibilité, historique des chantiers, zones d’inventaires DI). Ces priorités d’actions sont à la fois présentées à l’échelle du massif dans sa globalité et déclinées par habitats.
-
 ```{r}
 #| echo: false
 # Carte avec un point par relevé dont la couleur correspond à prio (prio_txt) 
@@ -241,3 +244,5 @@ leaflet(prio_hab) %>%
     opacity = 1
   )
 ```
+
+Source : Projet intégré de conservation et restauration des milieux naturels
