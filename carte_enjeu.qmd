@@ -1,6 +1,8 @@
 ---
 title: "Enjeux de conservation du massif du Volcan"
-format: html
+format:
+  html:
+    self-contained: true
 editor: visual
 ---
 
