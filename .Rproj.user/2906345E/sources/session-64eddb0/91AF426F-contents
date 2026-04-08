@@ -1,19 +1,16 @@
 ---
-title: "Projet intégré de conservation et restauration des milieux naturels -  Résulats du diagnostic et de la priorisation spatiale des actions de restauration sur le massif du Volcan"
+title: "Projet intégré de conservation et restauration des milieux naturels -  Résultats du diagnostic et de la priorisation spatiale des actions de restauration sur le massif du Volcan"
 format:
   html:
     self-contained: true
-    logo: logo_Reminat.png
 editor: visual
 ---
 
-<p align="right">
+::: {style="display: flex; justify-content: center; gap: 20px; align-items: center;"}
+<img src="logo_Reminat.png" width="150"/> ![](CIRAD.jpg){width="150"} <img src="logo_PNR.png" width="150"/> ![](Logo_UR.jpg){width="150"}
+:::
 
-<img src="logo_Reminat.png" width="150"/>
-
-</p>
-
-# Degré d’invasion final sur le massif du Volcan
+# Degré d’invasion sur le massif du Volcan
 
 ```{r}
 #| include: false
@@ -55,7 +52,8 @@ di_global$DI_6cat <- factor(
      "moyennement envahi (3)",
      "moyennement envahi (4)",
      "très envahi (5)",
-     "très envahi (6)"))
+     "très envahi (6)"),
+  labels = c( "Intact", "Très peu envahi", "Peu envahi", "Moyennement envahi mais abondance d'indigène", "Moyennement envahi", "Très envahi", "Dominé par les exotiques"))
 
 pal <- colorFactor(palette = c(
     "intact" = "#00994C",
@@ -124,7 +122,14 @@ st_crs(enjeu)
 
 breaks <- c(  0, 6.7, 13.3, 19.9, 26.6, 33.2, 39.9, 46.5, 53.2, 59.8, 66.4, 73.1, 79.7, 86.4, 93, 99.7)
 
-labels <- paste0( "[",  head(breaks, -1), " - ",  tail(breaks, -1), "]")
+labels <- paste0(
+  "[", head(breaks, -1), " - ", tail(breaks, -1), "]"
+)
+
+# Ajout de Min et Max
+labels[1] <- paste0(labels[1], " - Min")
+labels[length(labels)] <- paste0(labels[length(labels)], " - Max")
+
 
 enjeu$classe <- cut(
   enjeu$enjeux_Z,
@@ -173,7 +178,7 @@ leaflet(enjeu) %>%
     "bottomright",
     pal = pal,
     values = ~classe,
-    title = "Enjeux de conservation - Gradient issu de Zonation",
+    title = "Enjeux de conservation",
     opacity = 1
   )
 ```
@@ -246,3 +251,7 @@ leaflet(prio_hab) %>%
 ```
 
 Source : Projet intégré de conservation et restauration des milieux naturels
+
+::: {style="display: flex; justify-content: center; gap: 20px; align-items: center;"}
+![](Union_europeenne.jpg){width="158"} ![](Europe_FEADER.png){width="150"} ![](Prefecture.png){width="120"} ![](Region.png){width="152"}![](images/clipboard-2826500902.png){width="110"}![](images/clipboard-587944360.jpeg){width="150"}![](images/clipboard-628221018.jpeg){width="200"}
+:::

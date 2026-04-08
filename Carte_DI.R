@@ -13,6 +13,7 @@ di_global <-st_read("06_Prio_Volcan_2026_v3.shp")
 class(di_global)
 plot(di_global)
 
+
 # leaflet = WGS 84
 # on transforme car on est en UTM40S
 di_global <- st_transform(di_global, 4326)
