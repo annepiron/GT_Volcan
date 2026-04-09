@@ -3,6 +3,7 @@ title: "Projet intégré de conservation et restauration des milieux naturels - 
 format:
   html:
     self-contained: true
+    embed-resources: true
 editor: visual
 ---
 
@@ -213,12 +214,22 @@ st_crs(prio_hab)
 # échelle de couleurs
 # test 1 : pal <- colorFactor(palette = "Set2", domain = prio_hab$DI_6cat)
 
+# reordonne la legende
+prio_hab$prio_txt <- factor(
+  prio_hab$prio_txt,
+  levels = c(
+     "Faibles Priorités - Score inférieur à 50",
+  "Priorités intermédiaires - Score compris entre 50 et 69",
+  "Fortes priorités - Top 50% (score compris entre 78 et 70)",
+  "Très fortes priorités - Top 25% (score compris entre 84 et 79)",
+  "Très fortes priorités - Top 10% (score sup ou égal à 85)"))
+
 pal <- colorFactor(palette = c(
   "Faibles Priorités - Score inférieur à 50" = "#FDE725",
   "Priorités intermédiaires - Score compris entre 50 et 69" = "#5dc963",
   "Fortes priorités - Top 50% (score compris entre 78 et 70)" = "#21908d",
-  "Très fortes priorités - Top 10% (score sup ou égal à 85)" = "#3B528B",
-  "Très fortes priorités - Top 25% (score compris entre 84 et 79)" = "#440154"
+  "Très fortes priorités - Top 25% (score compris entre 84 et 79)" = "#3B528B",
+  "Très fortes priorités - Top 10% (score sup ou égal à 85)" = "#440154"
 ), domain = prio_hab$prio_txt)
 ```
 
